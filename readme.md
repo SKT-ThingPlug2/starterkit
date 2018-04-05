@@ -5,7 +5,7 @@
 
 ## device.js 실행 argument 
 
--h ThingPlug HostIP (default : test.sktiot.com)<br/>
+--host ThingPlug HostIP (default : test.sktiot.com)<br/>
 <br/>
 -u userName : ThingPlug 사용자 이름 (default : fail)<br/>
 -p password : ThingPlug 사용자 비밀번호 - token발급을 위해 필요(default : fail)<br/>
@@ -16,7 +16,7 @@
 
 -t timeout : 가상 디바이스의 생존시간(초) (default : unlimited)<br/>
 
---help 사용법<br/>
+-h --help 사용법<br/>
 
 ### ex) node device.js -u test1 -p password -e Airconditioner,GPS,Logistics -s testService -h test.sktiot.com
 
@@ -56,7 +56,7 @@ TelemetryData전달 : HTTP, MQTT (선택)<br/>
 
 ## application.js 실행 argument 
 
--h ThingPlug HostIP (default : test.sktiot.com)<br/>
+--host ThingPlug HostIP (default : test.sktiot.com)<br/>
 <br/>
 -u userName : ThingPlug 사용자 이름 (default : fail)<br/>
 -p password : ThingPlug 사용자 비밀번호 - token발급을 위해 필요(default : fail)<br/>
@@ -69,7 +69,7 @@ TelemetryData전달 : HTTP, MQTT (선택)<br/>
 
 -t timeout : 샘플 어플리케이션의 생존시간(초) (default : unlimited)<br/>
 
---help 사용법<br/>
+-h --help 사용법<br/>
 
 ### ex) node application -u testUser -s testService -r 3 -p password -d testDevoce -t 10 --tele=humidity,temperature --set=dehumidifier:on
 
