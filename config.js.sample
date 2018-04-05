@@ -1,0 +1,10 @@
+module.exports = {
+    "userName" : "myuser",
+    "userPassword" : "mypassword",
+    "serviceName" : "myservice",
+    "dataRate" : 3, //3 seconds
+    "deviceName" : "mydevice",
+    "host" : "127.0.0.1", 
+    "port" : 9000,
+    "timer" : 10 //10 seconds
+}

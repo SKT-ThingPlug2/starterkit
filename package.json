@@ -1,0 +1,33 @@
+{
+  "name": "thingplug-2.0-starter-kit",
+  "version": "0.1.0",
+  "description": "SKT의 ThingPlug 2.0 Starter Kit",
+  "scripts": {
+    "device": "node device.js"
+  },
+  "keywords": [
+    "skt",
+    "iot",
+    "thingplug2"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "colors": "^1.1.2",
+    "mqtt": "latest",
+    "xml2js": "^0.4.10",
+    "express": "^4.2.1",
+    "body-parser": "latest",
+    "argv": "latest",
+    "async": "latest",
+    "underscore": "latest",
+    "es6-promise": "latest",
+    "date-utils": "latest",
+    "sleep": "latest",
+    "uuid": "latest"
+  },
+  "engines": {
+    "node": ">=0.10.x"
+  }
+}
