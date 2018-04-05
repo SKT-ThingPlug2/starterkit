@@ -56,7 +56,7 @@ TelemetryData전달 : HTTP, MQTT (선택)<br/>
 
 ## application.js 실행 argument 
 
--h ThingPlug HostIP (default : localhost)<br/>
+-h ThingPlug HostIP (default : test.sktiot.com)<br/>
 <br/>
 -u userName : ThingPlug 사용자 이름 (default : fail)<br/>
 -p password : ThingPlug 사용자 비밀번호 - token발급을 위해 필요(default : fail)<br/>
