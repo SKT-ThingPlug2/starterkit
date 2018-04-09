@@ -4,7 +4,7 @@ module.exports = {
     "serviceName" : "myservice",
     "dataRate" : 3, //3 seconds
     "deviceName" : "mydevice",
-    "host" : "127.0.0.1", 
+    "host" : "test.sktiot.com", 
     "port" : 9000,
     "timer" : 10 //10 seconds
 }

@@ -2,6 +2,7 @@
 
 본 tool은 nodejs로 작성된 test code로서 개발용도로 사용바랍니다.
 실 단말 또는 서비스의 API 호출을 하여 문제가 발생하는 경우 책임을 지지 않습니다.
+Staging 플랫폼 주소 : test.sktiot.com
 
 ## device.js 실행 argument 
 
