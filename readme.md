@@ -1,7 +1,7 @@
 # ThingPlug 2.0 StarterKit (ver 0.1)
 
 본 tool은 nodejs로 작성된 test code로서 개발용도로 사용바랍니다.
-실 단말 또는 서비스의 API 호출을 하여 문제가 발생하는 경우 책임을 지지 않습니다.
+StarterKit을 활용하여 실 단말 또는 서비스의 API 호출을 하여 문제가 발생하는 경우 책임을 지지 않습니다.
 Staging 플랫폼 주소 : test.sktiot.com
 
 ## device.js 실행 argument 
@@ -78,7 +78,7 @@ TelemetryData전달 : HTTP, MQTT (선택)<br/>
 
 ~~~javascript
 //json config를 별도로 작성한 경우(config.js.sample 활용)
-var config = require('./lib/config');
+var config = require('./config');
 
 //또는
 var config = {      //config.js활용가능
@@ -109,6 +109,15 @@ var config = {      //config.js활용가능
 
 ### Simulator 활용
 
+Simulator는 자동으로 가장의 플랫폼 자원을 생성하고, 동작하는 코드 입니다.
+
+Device Simulator에서는 Service, DeviceDescriptor, Device 정보가 플랫폼에 없는 경우 자동으로 생성하며, 주기적으로 가상 디바이스의 센서 정보를 플랫폼으로 보고합니다.
+단말로 Descriptor에 맞는 제어가 오는 경우 status를 업데이트 하기도 합니다.
+
+Application은 Device Simulator(또는 실물 디바이스)의 센서의 최신 데이터를 가져오거나, 디바이스로 제어를 보내게 됩니다.
+
+프로그램 실행시 플랫폼 관련 정보는 상기 설명과 같이 CLI 또는 Config JSON을 활용하여 불러올 수 있습니다.
+
 ~~~javascript
 
 //cli argument를 활용하는 경우
@@ -126,6 +135,9 @@ app.simulator("device", config); (가상 device 생성 및 실행)
 ~~~
 
 ### ThingPlug Application API 활용
+
+Application에서 사용하는 ThingPlug2.0 API를 Wrapping하여 제공합니다.
+프로그램 실행시 플랫폼 관련 정보는 상기 설명과 같이 CLI 또는 Config JSON을 활용하여 불러올 수 있습니다.
 
 ~~~javascript
 
@@ -170,6 +182,9 @@ applicationApi.setAttribute(attribute, function(err, result){
 
 
 ### ThingPlug Device API 활용
+
+Device에서 사용하는 ThingPlug2.0 API를 Wrapping하여 제공합니다.
+프로그램 실행시 플랫폼 관련 정보는 상기 설명과 같이 CLI 또는 Config JSON을 활용하여 불러올 수 있습니다.
 
 ~~~javascript
 
