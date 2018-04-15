@@ -1,20 +1,24 @@
 # ThingPlug 2.0 StarterKit (ver 0.1)
 
 본 tool은 nodejs로 작성된 test code로서 개발용도로 사용바랍니다.
+
 StarterKit을 활용하여 실 단말 또는 서비스의 API 호출을 하여 문제가 발생하는 경우 책임을 지지 않습니다.
+
 Staging 플랫폼 주소 : test.sktiot.com
+
 
 ## npm 다운로드
 nodejs에서 thingplug2-starter-kit을 바로 다운로드 받아 사용 할 수 있습니다.
 
 npm-module 전체 설치 : 
+```console
+foo@bar:~$ npm install
+```
 
-/> npm install
-
-
-starterkit 설치 : 
-
-/> npm install thingplug2-starter-kit
+starterkit만 설치 : 
+```console
+foo@bar:~$ npm install thingplug2-starter-kit
+```
 
 ## device.js 실행 argument 
 
@@ -31,7 +35,11 @@ starterkit 설치 :
 
 -h --help 사용법<br/>
 
-### ex) node device.js -u test1 -p password -e Airconditioner,GPS,Logistics -s testService -h test.sktiot.com
+
+### ex) device cli example 
+```console
+foo@bar:~$ node device.js -u test1 -p password -e Airconditioner,GPS,Logistics -s testService
+```
 
 <br/>
 <br/>
@@ -84,7 +92,10 @@ TelemetryData전달 : HTTP, MQTT (선택)<br/>
 
 -h --help 사용법<br/>
 
-### ex) node application -u testUser -s testService -r 3 -p password -d testDevoce -t 10 --tele=humidity,temperature --set=dehumidifier:on
+### ex) application cli example 
+```console
+foo@bar:~$ node application -u testUser -s testService -r 3 -p password -d testDevoce -t 10 --tele=humidity,temperature --set=dehumidifier:on
+```
 
 ## config.js 예시 (또는 config json format )
 
