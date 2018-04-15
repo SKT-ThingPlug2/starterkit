@@ -1,17 +1,23 @@
 {
-  "name": "thingplug-2.0-starter-kit",
+  "name": "thingplug2-starter-kit",
   "version": "0.1.0",
   "description": "SKT의 ThingPlug 2.0 Starter Kit",
   "scripts": {
-    "device": "node device.js"
+    "device": "node device.js",
+    "application": "node application.js"
   },
   "keywords": [
     "skt",
     "iot",
     "thingplug2"
   ],
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SKT-ThingPlug2/thingplug2-starterkit.git"
+  },
+  "author": "SKTelecom",
+  "license": "Apache",
+  "main": "./lib/index",
   "devDependencies": {},
   "dependencies": {
     "colors": "^1.1.2",

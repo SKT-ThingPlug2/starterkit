@@ -4,6 +4,14 @@
 StarterKit을 활용하여 실 단말 또는 서비스의 API 호출을 하여 문제가 발생하는 경우 책임을 지지 않습니다.
 Staging 플랫폼 주소 : test.sktiot.com
 
+## npm 다운로드
+nodejs에서 thingplug2-starter-kit을 바로 다운로드 받아 사용 할 수 있습니다.
+npm-module 전체 설치 : 
+/> npm install
+
+starterkit 설치 : 
+/> npm install thingplug2-starter-kit
+
 ## device.js 실행 argument 
 
 --host ThingPlug HostIP (default : test.sktiot.com)<br/>
@@ -121,16 +129,16 @@ Application은 Device Simulator(또는 실물 디바이스)의 센서의 최신 
 ~~~javascript
 
 //cli argument를 활용하는 경우
-var app = require('./lib/index'); (상대 구조는 추후 변경 예정)
-app.simulator("application", null); (가상 application 생성 및 실행)
-app.simulator("device", null); (가상 device 생성 및 실행)
+var app = require('thingplug2-stater-kit'); // local >> require('./lib/index');
+app.simulator("application", null); // (가상 application 생성 및 실행)
+app.simulator("device", null); // (가상 device 생성 및 실행)
 
 //json config를 별도로 작성한 경우(config.js.sample 활용)
-var app = require('./lib/index'); // (상대 구조는 추후 변경 예정)
+var app = require('thingplug2-stater-kit'); // local >> require('./lib/index');
 var config = require('./config'); // config object
 
-app.simulator("application", config); (가상 application 생성 및 실행)
-app.simulator("device", config); (가상 device 생성 및 실행)
+app.simulator("application", config); // (가상 application 생성 및 실행)
+app.simulator("device", config); // (가상 device 생성 및 실행)
 
 ~~~
 
@@ -142,11 +150,11 @@ Application에서 사용하는 ThingPlug2.0 API를 Wrapping하여 제공합니�
 ~~~javascript
 
 //cli argument를 활용하는 경우
-var app = require('./lib/index'); //(상대 구조는 추후 변경 예정)
+var app = require('thingplug2-stater-kit'); // local >> require('./lib/index'); 
 var applicationApi = app.api("application", null); //(가상 application의 api 호출 준비)
 
 //json config를 별도로 작성한 경우(config.js.sample 활용)
-var app = require('./lib/index'); //(상대 구조는 추후 변경 예정)
+var app = require('thingplug2-stater-kit'); // local >> require('./lib/index');  
 var config = require('./config'); // config object
 var applicationApi = app.api("application", config); //(가상 application의 api 호출 준비)
 
@@ -189,11 +197,11 @@ Device에서 사용하는 ThingPlug2.0 API를 Wrapping하여 제공합니다.
 ~~~javascript
 
 //cli argument를 활용하는 경우
-var app = require('./lib/index'); //(상대 구조는 추후 변경 예정)
+var app = require('thingplug2-stater-kit'); // local >> require('./lib/index');  
 var deviceApi = app.api("device", null); //(가상 device api 호출 준비)
 
 //json config를 별도로 작성한 경우(config.js.sample 활용)
-var app = require('./lib/index'); //(상대 구조는 추후 변경 예정)
+var app = require('thingplug2-stater-kit'); // local >> require('./lib/index');  
 var config = {      //config.js활용가능
     "userName" : "myuser",
     "userPassword" : "mypassword",
