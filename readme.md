@@ -46,6 +46,8 @@ b. config JSON 작성
 
 
 ### ex) device CLI example 
+
+#### CLI Argument 활용
 ```console
 foo@bar:~$ node device.js -u test1 -p password -e Airconditioner,GPS,Logistics -s testService -t 10
 
@@ -72,6 +74,17 @@ telemetry Data : [{"temperature":18},{"latitude":"37.381575","longitude":"127.11
 ###The Simulator has been killed ###
 
 ```
+
+#### config JSON 작성
+```console
+foo@bar:~$ node device
+
+-------Using Objects-------
+----------arguments----------
+...
+
+```
+
 
 <br/>
 <br/>
@@ -121,6 +134,8 @@ telemetry Data : [{"temperature":18},{"latitude":"37.381575","longitude":"127.11
 
 
 ### ex) application CLI example 
+
+#### CLI Argument 활용
 ```console
 foo@bar:~$ node application -u testUser -s testService -r 3 -p password -d testDevice -t 10 --tele=humidity,temperature --set=dehumidifier:on
 
@@ -143,6 +158,17 @@ Telemetry : {"result":"success","rows":{"device":{"humidity":["2018-04-15 21:37:
 ###The Simulator has been killed ###
 
 ```
+
+#### config JSON 작성
+```console
+foo@bar:~$ node application
+
+-------Using Objects-------
+----------arguments----------
+...
+
+```
+
 
 ## config.js 예시 (또는 config json format )
 
@@ -174,16 +200,6 @@ var config = {      //config.js활용가능
 };
 
 ~~~
-
-```console
-foo@bar:~$ node application
-foo@bar:~$ node device
-
--------Using Objects-------
-----------arguments----------
-...
-
-```
 
 
 ## library 활용법
