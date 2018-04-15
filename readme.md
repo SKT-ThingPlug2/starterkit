@@ -39,7 +39,7 @@ b. config JSON 작성
 | deviceName       | -d         | ThingPlug 디바이스 명 | StarterKitDevice | O     |
 | DataRate         | -r         | 디바이스 데이터 주기(초)| 60       | O           |
 | sensorNodeEntity | -e         | 센서 리스트  <br/> (Airconditioner, Dehumidifier, GPS, Logistics, Barricade)          | X          | M           |
-| timeout          |            | 가상 디바이스의 생존 시간(초) | X  | O           |
+| timeout          | -t         | 가상 디바이스의 생존 시간(초) | X  | O           |
 | help             | -h         | argument 사용법       | X          | O           |
 | host             |            | 플랫폼 Host           | test.sktiot.com  | O     |
 | port             |            | 플랫폼 Port(HTTP)     | 9000       | O           |
@@ -47,7 +47,30 @@ b. config JSON 작성
 
 ### ex) device CLI example 
 ```console
-foo@bar:~$ node device.js -u test1 -p password -e Airconditioner,GPS,Logistics -s testService
+foo@bar:~$ node device.js -u test1 -p password -e Airconditioner,GPS,Logistics -s testService -t 10
+
+---Using Console Arguments---
+----------arguments----------
+ThingPlug2.0 Host : test.sktiot.com:9000
+userName : test1
+serviceName : testService
+deviceName : StarterKitDevice
+deviceOwnerName : test1
+dataRate : 60
+sensorNodeEntity : airconditioner,gps,logistics
+-----------------------------
+### This Simulator will be killed after 10 seconds ###
+### ThingPlug 2.0 virtual Device###
+login Success
+deviceToken : aaabbbccctoken
+attribute Data : [{"airconditioner":"on"},{"gps":"on"}]
+telemetryTopic : v1/dev/testService/StarterKitDevice/telemetry
+### mqtt connected ###
+subscribe topic : v1/dev/testService/StarterKitDevice/down
+telemetry Data : [{"temperature":18},{"latitude":"37.381575","longitude":"127.119024"},{"infrared":100}]
+...
+###The Simulator has been killed ###
+
 ```
 
 <br/>
@@ -91,7 +114,7 @@ foo@bar:~$ node device.js -u test1 -p password -e Airconditioner,GPS,Logistics -
 | tele             |            | Telemetry를 받고자 하는 Key값      | All | O          |
 | attr             |            | Attribute를 받고자 하는 Key값      | All | O          |
 | set              |            | 디바이스 제어 명령 (--set=key:value,aircontitioner:off,gps:on...)  |  | O     |
-| timeout          |            | 가상 디바이스의 생존 시간(초) |    | O                |
+| timeout          | -t         | 가상 디바이스의 생존 시간(초) |    | O                |
 | help             | -h         | argument 사용법       |            | O                |
 | host             |            | 플랫폼 Host           | test.sktiot.com  | O          |
 | port             |            | 플랫폼 Port(HTTP)     | 9000       | O                |
@@ -99,7 +122,26 @@ foo@bar:~$ node device.js -u test1 -p password -e Airconditioner,GPS,Logistics -
 
 ### ex) application CLI example 
 ```console
-foo@bar:~$ node application -u testUser -s testService -r 3 -p password -d testDevoce -t 10 --tele=humidity,temperature --set=dehumidifier:on
+foo@bar:~$ node application -u testUser -s testService -r 3 -p password -d testDevice -t 10 --tele=humidity,temperature --set=dehumidifier:on
+
+---Using Console Arguments---
+----------arguments----------
+ThingPlug2.0 Host : test.sktiot.com:9000
+userName : test1
+serviceName : testService
+deviceName : StarterKitDevice
+deviceOwnerName : test1
+dataRate : 3
+Telemetries : humidity,temperature
+Set Attribute : dehumidifier:on
+-----------------------------
+### This Simulator will be killed after 10 seconds ###
+### ThingPlug 2.0 Sample Application###
+login Success
+Telemetry : {"result":"success","rows":{"device":{"humidity":["2018-04-15 21:37:48",79.989],"temperature":["2018-04-15 21:38:18",18]}}}
+...
+###The Simulator has been killed ###
+
 ```
 
 ## config.js 예시 (또는 config json format )
@@ -133,11 +175,22 @@ var config = {      //config.js활용가능
 
 ~~~
 
+```console
+foo@bar:~$ node application
+foo@bar:~$ node device
+
+-------Using Objects-------
+----------arguments----------
+...
+
+```
+
+
 ## library 활용법
 
 ### Simulator 활용
 
-Simulator는 자동으로 가장의 플랫폼 자원을 생성하고, 동작하는 코드 입니다.
+Simulator는 자동으로 가상의 플랫폼 자원을 생성하고, 동작하는 코드 입니다.
 
 Device Simulator에서는 Service, DeviceDescriptor, Device 정보가 플랫폼에 없는 경우 자동으로 생성하며, 주기적으로 가상 디바이스의 센서 정보를 플랫폼으로 보고합니다.
 단말로 Descriptor에 맞는 제어가 오는 경우 status를 업데이트 하기도 합니다.
