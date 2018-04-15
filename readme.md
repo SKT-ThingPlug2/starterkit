@@ -6,6 +6,7 @@ Staging 플랫폼 주소 : test.sktiot.com
 
 ## npm 다운로드
 nodejs에서 thingplug2-starter-kit을 바로 다운로드 받아 사용 할 수 있습니다.
+
 npm-module 전체 설치 : 
 /> npm install
 
