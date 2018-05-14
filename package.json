@@ -1,6 +1,6 @@
 {
   "name": "thingplug2-starter-kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SKT의 ThingPlug 2.0 Starter Kit",
   "scripts": {
     "device": "node device.js",

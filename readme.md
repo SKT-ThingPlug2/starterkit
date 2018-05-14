@@ -314,6 +314,23 @@ deviceApi.createDeviceAttribute(attribute, function(err, result){
 ~~~
 
 
+#### Device에서 Push Message를 이용하고자 하는 경우
+
+Device로 전달된 Push Message를 활용하고자 하는 경우 다음과 같이 Listener를 활용할 수 있습니다.
+
+~~~javascript
+
+process.addListener('command', function(topic, message){
+    // message 예시
+    // { deviceId: 'db797b10-0be8-11e8-a9fb-15494e400000',
+    //   cmdId: 1131711368,
+    //   cmd: 'setAttribute',
+    //   attribute: { airconditioner: 'off' } 
+    // }
+});
+
+~~~
+
 <br/>
 <br/>
 
